@@ -1,7 +1,10 @@
 // Assignment Code
+var form = document.querySelector('#passwordGeneratorForm');
+var characterAmountNumber = document.querySelector('#characterAmountNumber');
+var includeUppercase = document.querySelector('#includeUppercase');
+var includeNumbers = document.querySelector('#includeNumbers');
+var includeSymbols = document.querySelector('#includeSymbols');
 var generateBtn = document.querySelector("#generate");
-
-
 
 function writePassword() {
   var password = generatePassword();
@@ -9,6 +12,10 @@ function writePassword() {
 
   passwordText.value = password;
 
+}
+
+function generatePassword () {
+  let lowercase =
 }
 
 generateBtn.addEventListener("click", writePassword);
