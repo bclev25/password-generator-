@@ -21,16 +21,27 @@ function generatePassword() {
   length = parseInt(length); 
 
   if (!isNaN(length) && length >= 8 && length <= 128) {
-    break;
+   break;
   }
+ 
+   alert("Invalid password please try again.");
 
-  alert ("invalid length! Please enter a number between 8 and 128");
-  }
+}
 
   var includeUppercase = confirm("Include uppercase characters?");
   var includeLowercase = confirm("Include lowercase characters?");
   var includeNumbers = confirm("Include numbers");
   var includeSpecialChars = confirm("Include special characters?");
+
+  if(
+    !includeLowercase &&
+    !includeUppercase && 
+    !includeSpecialChars &&
+    !includeNumbers 
+  ) {
+    alert("At least one character type must be selected!");
+    return;
+  }
 
   var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -53,10 +64,6 @@ function generatePassword() {
     selectedChars += specialChars;
   }
 
-  if (selectedChars === "") {
-    alert("You must select at least one character set.");
-    return "";
-  }
 
   var password = "";
   for (var i = 0; i < length; i++) {
@@ -64,6 +71,8 @@ function generatePassword() {
     password += selectedChars.charAt(randomIndex);
   }
 
-  return password;
+  alert("generate password:" + password);
+
+  generatePassword();
 
 }
