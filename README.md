@@ -1,4 +1,4 @@
-# 03 JavaScript: Password Generator
+# 03 
 
 ## Your Task
 
